@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  padding: 2em;
+}
+header .title {
+  font-size: 28px;
+}
+main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.map-container {
+  flex-grow: 1;
+}
+footer {
+  padding: 1em;
+}

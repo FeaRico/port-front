@@ -1,0 +1,12 @@
+h1{
+  text-align: center;
+}
+div.index{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+

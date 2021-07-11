@@ -18,7 +18,7 @@ import {DocksService} from "../docks.service";
 })
 export class DocksAllComponent implements OnInit {
   docks: Dock[];
-  displayColumns: string[] = ['id', 'size'];
+  displayedColumns: string[] = ['id', 'size'];
 
   constructor(private dockService: DocksService) { }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ship } from './ship';
-import { ShipService } from './ship.service';
+import { ShipsService } from './ships.service';
 
 /*const ELEMENT_DATA: Ship[] = [
   {id: 1, name: 'SSSS', status: 'ACTIVE', type: 'FLF', flag: 'RUSSIA', yearBuilt: 2003, homePort: 'SAINT-PETERSBURG', dockNum: 2, lon: 54, lat: 23},
@@ -11,16 +11,16 @@ import { ShipService } from './ship.service';
 
 @Component({
   selector: 'app-ship',
-  templateUrl: './ship.component.html',
-  providers: [ShipService],
-  styleUrls: ['./ship.component.css']
+  templateUrl: './ships.component.html',
+  providers: [ShipsService],
+  styleUrls: ['./ships.component.css']
 })
-export class ShipComponent implements OnInit {
+export class ShipsComponent implements OnInit {
   ships: Ship[];
 
   displayedColumns: string[] = ['id', 'name', 'status', 'type', 'flag', 'yearBuilt', 'homePort', 'dockNum'];
 
-  constructor(private shipService: ShipService) {
+  constructor(private shipService: ShipsService) {
  }
 
   ngOnInit(): void {

@@ -7,8 +7,8 @@ import {Ship} from "./ship";
 @Injectable({
   providedIn: 'root'
 })
-export class ShipService {
-  private jsonServerUrl: string = 'http://localhost:3000/allShips';
+export class ShipsService {
+  private jsonServerUrl: string = 'http://localhost:3000/ships';
   private springServerUrl: string = 'http://localhost:8080/allShips';
 
   constructor(private http: HttpClient) { }

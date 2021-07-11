@@ -12,6 +12,7 @@ import {ShipEditComponent} from "./ships/ship-edit/ship-edit.component";
 import {ShipDetailComponent} from "./ships/ship-detail/ship-detail.component";
 import {DocksAllComponent} from "./docks/docks-all/docks-all.component";
 import {ShipsAllComponent} from "./ships/ships-all/ships-all.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -48,6 +49,15 @@ const routes: Routes = [
       { path: 'edit/:id', component: ShipEditComponent },
       { path: 'detail/:id', component: ShipDetailComponent }
     ],
+  },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/not-found',
+    pathMatch: 'full'
   },
 ];
 

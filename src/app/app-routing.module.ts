@@ -31,6 +31,7 @@ const routes: Routes = [
     path: 'docks',
     component: DocksComponent,
     children: [
+      { path: '', redirectTo: 'all', pathMatch: 'full'},
       { path: 'all', component: DocksAllComponent },
       { path: 'add', component: DockAddComponent },
       { path: 'edit/:id', component: DockEditComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
     path: 'ships',
     component: ShipsComponent,
     children: [
+      { path: '', redirectTo: 'all', pathMatch: 'full'},
       { path: 'all', component: ShipsAllComponent },
       { path: 'add', component: ShipAddComponent },
       { path: 'edit/:id', component: ShipEditComponent },

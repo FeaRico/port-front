@@ -18,6 +18,7 @@ import { DockDetailComponent } from './docks/dock-detail/dock-detail.component';
 import { ShipDetailComponent } from './ships/ship-detail/ship-detail.component';
 import { DocksAllComponent } from './docks/docks-all/docks-all.component';
 import { ShipsAllComponent } from './ships/ships-all/ships-all.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ShipsAllComponent } from './ships/ships-all/ships-all.component';
     DockDetailComponent,
     ShipDetailComponent,
     DocksAllComponent,
-    ShipsAllComponent
+    ShipsAllComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

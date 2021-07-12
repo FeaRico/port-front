@@ -1,6 +1,6 @@
 <div *ngIf="dock">
-  <div class="container col-md-8 mx-auto w-25">
-    <h1>Dock №{{dock.id}}</h1>
+  <div class="container col-md-8 mx-auto w-25 min-200">
+    <h1>Причал №{{dock.id}}</h1>
     <div class="input-group mb-3">
       <span class="input-group-text" id="inputSizeLabel">Размер</span>
       <input class="form-control" id="dock-size" [(ngModel)]="dock.size"

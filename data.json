@@ -1,0 +1,287 @@
+{
+  "ships": [
+    {
+      "id": 1,
+      "name": "Zeus",
+      "status": "Active",
+      "type": "Ro-ro Cargo",
+      "flag": "Russia",
+      "yearBuilt": 1999,
+      "homePort": "Saint-Petesburg",
+      "dockNum": 0,
+      "lat": 60.3587,
+      "lon": 28.6066
+    },
+    {
+      "id": 2,
+      "name": "Ermac",
+      "status": "Active",
+      "type": "Icebreaker",
+      "flag": "Russia",
+      "yearBuilt": "1972",
+      "homePort": "Saint-Petesburg",
+      "dockNum": 1,
+      "lat": null,
+      "lon": null
+    },
+    {
+      "id": 3,
+      "name": "ELBWATER",
+      "status": "Active",
+      "type": "Container Ship",
+      "flag": "Cyprus",
+      "yearBuilt": 2012,
+      "homePort": "LIMASSOL",
+      "dockNum": 2,
+      "lat": 60.3557,
+      "lon": 28.6105
+    },
+    {
+      "id": 4,
+      "name": "ANGARA",
+      "status": "Active",
+      "type": "Chemical Tanker",
+      "flag": "Russia",
+      "yearBuilt": 1977,
+      "homePort": "Saint-Petesburg",
+      "dockNum": 2,
+      "lat": 60.3557,
+      "lon": 28.6105
+    },
+    {
+      "id": 5,
+      "name": "KELLY",
+      "status": "Active",
+      "type": "Cargo/Containership",
+      "flag": "Malta",
+      "yearBuilt": 2004,
+      "homePort": "None",
+      "dockNum": 2,
+      "lat": 60.3557,
+      "lon": 28.6105
+    },
+    {
+      "id": 6,
+      "name": "ALLEGRA",
+      "status": "No Active",
+      "type": "Bulk Carrier",
+      "flag": "Liberia",
+      "yearBuilt": 1995,
+      "homePort": "MONROVIA",
+      "dockNum": 2,
+      "lat": 60.3557,
+      "lon": 28.6105
+    },
+    {
+      "id": 7,
+      "name": "GANT FLAIR",
+      "status": "Active",
+      "type": "Bulk Carrier",
+      "flag": "Liberia",
+      "yearBuilt": 2010,
+      "homePort": "MONROVIA",
+      "dockNum": 2,
+      "lat": 60.3557,
+      "lon": 28.6105
+    },
+    {
+      "id": 8,
+      "name": "SLV 415",
+      "status": "Active",
+      "type": "Tanker",
+      "flag": "Russia",
+      "yearBuilt": 2001,
+      "homePort": "None",
+      "dockNum": 5,
+      "lat": 60.3529,
+      "lon": 28.63
+    },
+    {
+      "id": 9,
+      "name": "FLANDRIYA",
+      "status": "Active",
+      "type": "Oil/Chemical Tanker",
+      "flag": "Russia",
+      "yearBuilt": 1986,
+      "homePort": "Saint-Petesburg",
+      "dockNum": 9,
+      "lat": 60.3536,
+      "lon": 28.6278
+    },
+    {
+      "id": 10,
+      "name": "ECOBALT",
+      "status": "Active",
+      "type": "Tanker",
+      "flag": "Russia",
+      "yearBuilt": 2006,
+      "homePort": "None",
+      "dockNum": 7,
+      "lat": 60.3535,
+      "lon": 28.6272
+    },
+    {
+      "id": 11,
+      "name": "NESTE",
+      "status": "No Active",
+      "type": "Chemical Tanker",
+      "flag": "Norway",
+      "yearBuilt": 1990,
+      "homePort": "None",
+      "dockNum": 7,
+      "lat": 60.3535,
+      "lon": 28.6272
+    },
+    {
+      "id": 12,
+      "name": "BURAN",
+      "status": "Active",
+      "type": "Tug",
+      "flag": "Russia",
+      "yearBuilt": 1970,
+      "homePort": "None",
+      "dockNum": 8,
+      "lat": 60.3594,
+      "lon": 28.6124
+    },
+    {
+      "id": 13,
+      "name": "LAPIS",
+      "status": "No Active",
+      "type": "Bulk Carrier",
+      "flag": "Panama",
+      "yearBuilt": 1997,
+      "homePort": "None",
+      "dockNum": 3,
+      "lat": 60.3595,
+      "lon": 28.6179
+    },
+    {
+      "id": 14,
+      "name": "METEOR 190",
+      "status": "Active",
+      "type": "Passenger",
+      "flag": "Russia",
+      "yearBuilt": 2015,
+      "homePort": "Saint-Petesburg",
+      "dockNum": 0,
+      "lat": 60.3587,
+      "lon": 28.6066
+    },
+    {
+      "id": 15,
+      "name": "AVRA I",
+      "status": "Active",
+      "type": "Bulk Carrier",
+      "flag": "Greece",
+      "yearBuilt": 2010,
+      "homePort": "PIRAEUS",
+      "dockNum": 0,
+      "lat": 60.3587,
+      "lon": 28.6066
+    },
+    {
+      "id": 16,
+      "name": "FREYA",
+      "status": "Active",
+      "type": "Oil/Chemical Tanker",
+      "flag": "Russia",
+      "yearBuilt": 1995,
+      "homePort": "None",
+      "dockNum": 0,
+      "lat": 60.3587,
+      "lon": 28.6066
+    },
+    {
+      "id": 17,
+      "name": "LADY A",
+      "status": "Active",
+      "type": "Sailing Vessel",
+      "flag": "Finland",
+      "yearBuilt": 2009,
+      "homePort": "None",
+      "dockNum": 0,
+      "lat": 60.3587,
+      "lon": 28.6066
+    }
+  ],
+  "docks": [
+    {
+      "id": 0,
+      "size": 100,
+      "lat": 60.3587,
+      "lon": 28.6066,
+      "amountShips": 0
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "lat": 60.3541,
+      "lon": 28.6112,
+      "amountShips": 0
+    },
+    {
+      "id": 2,
+      "size": "9",
+      "lat": 54.54,
+      "lon": 45.322,
+      "amountShips": 0
+    },
+    {
+      "id": 3,
+      "size": 1,
+      "lat": 60.3595,
+      "lon": 28.6179,
+      "amountShips": 0
+    },
+    {
+      "id": 4,
+      "size": 4,
+      "lat": 60.3608,
+      "lon": 28.6076,
+      "amountShips": 0
+    },
+    {
+      "id": 5,
+      "size": 5,
+      "lat": 60.3529,
+      "lon": 28.63,
+      "amountShips": 0
+    },
+    {
+      "id": 6,
+      "size": 3,
+      "lat": 60.3534,
+      "lon": 28.629,
+      "amountShips": 0
+    },
+    {
+      "id": 7,
+      "size": 6,
+      "lat": 60.3535,
+      "lon": 28.6272,
+      "amountShips": 0
+    },
+    {
+      "id": 8,
+      "size": 3,
+      "lat": 60.3594,
+      "lon": 28.6124,
+      "amountShips": 0
+    },
+    {
+      "id": 9,
+      "size": 1,
+      "lat": 60.3536,
+      "lon": 28.6278,
+      "amountShips": 0
+    },
+    {
+      "id": 10,
+      "size": 2,
+      "lat": 60.3597,
+      "lon": 28.6197,
+      "amountShips": 0
+    }
+  ]
+}

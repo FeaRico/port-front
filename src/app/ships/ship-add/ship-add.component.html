@@ -1,1 +1,44 @@
-<p>ship-add works!</p>
+<div class="container col-md-8 mx-auto w-25 min-300">
+  <h1>Добавление судна</h1>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputNameLabel">Имя</span>
+    <input class="form-control" id="ship-name" #shipName
+           aria-label="Имя судна" aria-describedby="inputNameLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputStatusLabel">Статус</span>
+    <input class="form-control" id="ship-status" #shipStatus
+           aria-label="Статус судна" aria-describedby="inputStatusLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputTypeLabel">Тип</span>
+    <input class="form-control" id="ship-type" #shipType
+           aria-label="Тип судна" aria-describedby="inputTypeLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputFlagLabel">Флаг</span>
+    <input class="form-control" id="ship-flag" #shipFlag
+           aria-label="Флаг судна" aria-describedby="inputFlagLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputYearBuiltLabel">Построен</span>
+    <input class="form-control" id="ship-year-built" #shipYearBuilt
+           aria-label="Год строительства" aria-describedby="inputYearBuiltLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputHomePortLabel">Родной порт</span>
+    <input class="form-control" id="ship-home-port" #shipHomePort
+           aria-label="Домашний порт" aria-describedby="inputHomePortLabel">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputDockNumLabel">Причал №</span>
+    <input class="form-control" id="ship-dock-num" #shipDockNum
+           aria-label="Номер причала" aria-describedby="inputDockNumLabel">
+  </div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-outline-primary"
+            (click)="add(shipName.value, shipStatus.value,
+            shipType.value, shipFlag.value, shipYearBuilt.value, shipHomePort.value, shipDockNum.value)">Сохранить</button>
+    <button class="btn btn-outline-primary" (click)="backToPage()">Назад</button>
+  </div>
+</div>

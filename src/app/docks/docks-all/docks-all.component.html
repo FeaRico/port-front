@@ -1,39 +1,42 @@
 <h1>Причалы</h1>
 
-<table mat-table [dataSource]="docks" class="mat-elevation-z8">
+<div class="center">
+  <table mat-table [dataSource]="docks">
 
-  <!-- ID -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>Номер</th>
-    <td mat-cell *matCellDef="let dock">{{dock.id}}</td>
-  </ng-container>
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Номер</th>
+      <td mat-cell *matCellDef="let dock">{{dock.id}}</td>
+    </ng-container>
 
-  <!-- SIZE -->
-  <ng-container matColumnDef="size">
-    <th mat-header-cell *matHeaderCellDef>Размер</th>
-    <td mat-cell *matCellDef="let dock">{{dock.size}}</td>
-  </ng-container>
+    <!-- SIZE -->
+    <ng-container matColumnDef="size">
+      <th mat-header-cell *matHeaderCellDef>Размер</th>
+      <td mat-cell *matCellDef="let dock">{{dock.size}}</td>
+    </ng-container>
 
-  <!--DETAIL -->
-  <ng-container matColumnDef="detail">
-    <th mat-header-cell *matHeaderCellDef>Редактировать</th>
-    <td mat-cell *matCellDef="let dock">
-      <a routerLink="/docks/detail/{{dock.id}}">
-        <fa-icon [icon]="icons.get('detail')" size="lg"></fa-icon>
-      </a>
-    </td>
-  </ng-container>
+    <!--DETAIL -->
+    <ng-container matColumnDef="detail">
+      <th mat-header-cell *matHeaderCellDef>Редактировать</th>
+      <td mat-cell *matCellDef="let dock">
+        <a routerLink="/docks/detail/{{dock.id}}">
+          <fa-icon [icon]="icons.get('detail')" size="lg"></fa-icon>
+        </a>
+      </td>
+    </ng-container>
 
-  <!-- DELETE -->
-  <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef>Удалить</th>
-    <td mat-cell *matCellDef="let dock">
-      <a>
+    <!-- DELETE -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Удалить</th>
+      <td mat-cell *matCellDef="let dock">
         <fa-icon [icon]="icons.get('delete')" size="lg" (click)="deleteDock(dock.id)"></fa-icon>
-      </a>
-    </td>
-  </ng-container>
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="d-grid gap-1">
+    <button class="btn btn-outline-primary" (click)="openAddPage()">Добавить новый причал</button>
+  </div>
+</div>

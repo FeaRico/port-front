@@ -4,7 +4,7 @@ h1{
 }
 
 table{
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 
@@ -14,4 +14,13 @@ table{
 
 fa-icon:hover{
   cursor: pointer;
+}
+
+div.center{
+  width: 50%;
+  margin: auto;
+}
+
+button{
+  margin: 1em 0 1em 0;
 }

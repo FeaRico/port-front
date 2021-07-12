@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
-import {Dock} from "../dock";
-import {DocksService} from "../docks.service";
+import {Router} from "@angular/router";
 import {faPenSquare} from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-/*const ELEMENT_DATA: Dock[] = [
-  {id: 1, size: 1},
-  {id: 2, size: 5},
-  {id: 3, size: 2},
-  {id: 4, size: 4},
-  {id: 5, size: 6}
-];*/
+import {Dock} from "../dock";
+import {DocksService} from "../docks.service";
 
 @Component({
   selector: 'app-dock-all',
@@ -26,7 +19,10 @@ export class DocksAllComponent implements OnInit {
     ["delete", faTrashAlt]
   ])
 
-  constructor(private dockService: DocksService) { }
+  constructor(
+    private dockService: DocksService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.getDocks();
@@ -44,6 +40,10 @@ export class DocksAllComponent implements OnInit {
       .subscribe(result => {
         console.log('Dock deleted: ' + result);
       });
+  }
+
+  public openAddPage(): void {
+    this.route.navigate(['/docks/add']).then(r => console.log(r));
   }
 
 }

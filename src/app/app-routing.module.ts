@@ -15,11 +15,11 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/main',
+    redirectTo: '/welcome',
     pathMatch: 'full'
   },
   {
-    path: 'main',
+    path: 'welcome',
     component: MainComponent
   },
   {

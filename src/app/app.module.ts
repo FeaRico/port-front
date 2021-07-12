@@ -20,6 +20,7 @@ import { ShipDetailComponent } from './ships/ship-detail/ship-detail.component';
 import { DocksAllComponent } from './docks/docks-all/docks-all.component';
 import { ShipsAllComponent } from './ships/ships-all/ships-all.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatTableModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

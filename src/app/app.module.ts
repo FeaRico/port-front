@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { MapOlComponent } from './map-ol/map-ol.component';
@@ -7,9 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { DocksComponent } from './docks/docks.component';
 import { ShipsComponent } from './ships/ships.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
-import { HttpClientModule } from '@angular/common/http';
 import { ShipAddComponent } from './ships/ship-add/ship-add.component';
 import { ShipEditComponent } from './ships/ship-edit/ship-edit.component';
 import { DockAddComponent } from './docks/dock-add/dock-add.component';
@@ -43,6 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserAnimationsModule,
     MatTableModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

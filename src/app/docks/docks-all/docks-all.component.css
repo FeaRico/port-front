@@ -7,3 +7,11 @@ table{
   width: 50%;
   margin: auto;
 }
+
+.mat-column-id, .mat-column-size, .mat-column-detail, .mat-column-delete{
+  text-align: center;
+}
+
+fa-icon:hover{
+  cursor: pointer;
+}

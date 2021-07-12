@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {Dock} from "../dock";
 import {DocksService} from "../docks.service";
+import {faPenSquare} from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 /*const ELEMENT_DATA: Dock[] = [
   {id: 1, size: 1},
@@ -18,7 +20,11 @@ import {DocksService} from "../docks.service";
 })
 export class DocksAllComponent implements OnInit {
   docks: Dock[];
-  displayedColumns: string[] = ['id', 'size'];
+  displayedColumns: string[] = ['id', 'size', 'detail', 'delete'];
+  icons = new Map([
+    ["detail", faPenSquare],
+    ["delete", faTrashAlt]
+  ])
 
   constructor(private dockService: DocksService) { }
 
@@ -26,12 +32,18 @@ export class DocksAllComponent implements OnInit {
     this.getDocks();
   }
 
-  public getDocks(): void{
+  public getDocks(): void {
     this.dockService.getAllDocks().subscribe(result => {
       this.docks = result;
-      console.log('Docks array:');
-      console.log(this.docks);
-    })
+      console.log('Docks array: ' + this.docks);
+    });
+  }
+
+  public deleteDock(id: number): void {
+    this.dockService.deleteDock(id)
+      .subscribe(result => {
+        console.log('Dock deleted: ' + result);
+      });
   }
 
 }

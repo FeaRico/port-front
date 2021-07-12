@@ -41,6 +41,7 @@ export class ShipsService {
 
   //PUT update the ship
   public updateShip(ship: Ship): Observable<any> {
+    const url = `${this.jsonServerUrl}/${ship.id}`
     return this.http.put(this.jsonServerUrl, ship, this.httpOptions);
   }
 

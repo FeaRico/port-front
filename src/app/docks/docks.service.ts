@@ -35,11 +35,12 @@ export class DocksService {
   //DELETE the dock
   public deleteDock(id: number): Observable<Dock> {
     const url = `${this.jsonServiceUrl}/${id}`;
-    return this.http.delete<Dock>(url);
+    return this.http.delete<Dock>(url, this.httpOptions);
   }
 
   //PUT update the dock
   public updateDock(dock: Dock): Observable<any> {
-    return this.http.put<Dock>(this.jsonServiceUrl, dock);
+    const url = `${this.jsonServiceUrl}/${dock.id}`
+    return this.http.put<Dock>(url, dock, this.httpOptions);
   }
 }

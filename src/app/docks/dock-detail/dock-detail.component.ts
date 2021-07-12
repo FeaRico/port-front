@@ -34,4 +34,17 @@ export class DockDetailComponent implements OnInit {
       })
   }
 
+  public saveDock(): void {
+    if(this.dock){
+      this.dockService.updateDock(this.dock)
+        .subscribe(result => {
+          console.log(result);
+        })
+    }
+  }
+
+  public backToPage(): void {
+    this.location.back();
+  }
+
 }

@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {faPenSquare} from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import {Router} from "@angular/router";
 
 import { Ship } from '../ship';
 import { ShipsService } from '../ships.service';
-
-/*const ELEMENT_DATA: Ship[] = [
-  {id: 1, name: 'SSSS', status: 'ACTIVE', type: 'FLF', flag: 'RUSSIA', yearBuilt: 2003, homePort: 'SAINT-PETERSBURG', dockNum: 2, lon: 54, lat: 23},
-  {id: 2, name: 'SSSS', status: 'ACTIVE', type: 'FLF', flag: 'RUSSIA', yearBuilt: 2001, homePort: 'SAINT-PETERSBURG', dockNum: 3, lon: 54, lat: 23},
-  {id: 3, name: 'SSSS', status: 'ACTIVE', type: 'FLF', flag: 'RUSSIA', yearBuilt: 2002, homePort: 'SAINT-PETERSBURG', dockNum: 1, lon: 54, lat: 23}
-];*/
 
 @Component({
   selector: 'app-ships-all',
@@ -18,10 +15,18 @@ import { ShipsService } from '../ships.service';
 export class ShipsAllComponent implements OnInit {
   ships: Ship[];
 
-  displayedColumns: string[] = ['id', 'name', 'status', 'type', 'flag', 'yearBuilt', 'homePort', 'dockNum'];
+  displayedColumns: string[] = ['id', 'name', 'status', 'type', 'flag',
+    'yearBuilt', 'homePort', 'dockNum', 'detail', 'delete'];
 
-  constructor(private shipService: ShipsService) {
-  }
+  icons = new Map([
+    ['detail', faPenSquare],
+    ['delete', faTrashAlt]
+  ]);
+
+  constructor(
+    private shipService: ShipsService,
+    private route: Router
+    ) { }
 
   ngOnInit(): void {
     this.getShips();
@@ -31,6 +36,17 @@ export class ShipsAllComponent implements OnInit {
     this.shipService.getAllShips().subscribe(result => {
       this.ships = result;
     });
+  }
+
+  public deleteShip(id: number): void {
+    this.shipService.deleteShip(id)
+      .subscribe(result => {
+        console.log('Ship deleted');
+      });
+  }
+
+  public openAddPage(): void {
+    this.route.navigate(['/ships/add']).then(r => console.log(r));
   }
 
 }

@@ -33,4 +33,17 @@ export class ShipDetailComponent implements OnInit {
       })
   }
 
+  public saveShip(): void {
+    if(this.ship){
+      this.shipsService.updateShip(this.ship)
+        .subscribe(result => {
+          console.log(result);
+        });
+    }
+  }
+
+  public backToPage(): void {
+    this.location.back();
+  }
+
 }

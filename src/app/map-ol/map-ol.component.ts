@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import Map from 'ol/Map';
-import {Feature, View} from "ol";
+import {Feature, Overlay, View} from "ol";
 import TileLayer from "ol/layer/Tile";
 import {OSM} from "ol/source";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import {fromLonLat} from "ol/proj";
 import {ShipsService} from "../ships/ships.service";
-import {Point} from "ol/geom";
-import {Icon, Style} from "ol/style";
+import {Circle, Point} from "ol/geom";
+import {Fill, Icon, Stroke, Style} from "ol/style";
 import IconAnchorUnits from "ol/style/IconAnchorUnits";
 
 @Component({
@@ -62,6 +62,84 @@ export class MapOlComponent implements OnInit {
       ],
       target: 'map-ol'
     });
+
+    let popContainer = document.getElementById('popup');
+    let popContent = document.getElementById('popup-content');
+    let popCloser = document.getElementById('popup-closer');
+
+    let overlay = new Overlay({
+      element: popContainer,
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250,
+      }
+    });
+
+    popCloser.onclick = function(){
+      overlay.setPosition(undefined);
+      popCloser.blur();
+      return false;
+    }
+
+    this.map.addOverlay(overlay);
+
+    this.map.on('pointermove', function (evt) {
+      let feature = this.forEachFeatureAtPixel(evt.pixel,
+        function(feature){
+        return feature;
+        });
+
+      if(feature){
+        let coord = this.getCoordinateFromPixel(evt.pixel);
+        popContent.innerHTML = '<article> Имя: ' + feature.values_.info.name + '</article>' +
+          '<article> Статус: ' + feature.values_.info.status + '</article>';
+        overlay.setPosition(coord);
+        console.log(coord);
+        let circleFeature: Feature;
+        circleFeature = new Feature({
+          geometry: new Circle(coord, 10000),
+        });
+        circleFeature.setStyle(
+          new Style({
+            fill: new Fill({
+              color: 'rgba(51, 122, 183, 0.3)'
+            }),
+            stroke: new Stroke({
+              width: 2,
+              color: 'rgba(51, 122, 183, 0.8)'
+            }),
+          })
+        );
+        this.shapeLayer.addFeature(circleFeature);
+      } else popCloser.click();
+    });
+
+    this.map.on('click', function (evt) {
+      let feature = this.forEachFeatureAtPixel(evt.pixel,
+        function (feature) {
+          return feature;
+        });
+
+      if (feature) {
+        console.log(feature);
+        popContent.style.backgroundColor = "white";
+        popContainer.style.backgroundColor = "white";
+        let coordinates = this.getCoordinateFromPixel(evt.pixel);
+        popContent.innerHTML = '<article> Номер: ' + feature.values_.info.id + ' </article>' +
+          '<article> Имя: ' + feature.values_.info.name + ' </article>' +
+          '<article> Статус: ' + feature.values_.info.status + ' </article>' +
+          '<article> Тип: ' + feature.values_.info.type + ' </article>' +
+          '<article> Флаг: ' + feature.values_.info.flag + ' </article>' +
+          '<article> Год строительства: ' + feature.values_.info.yearBuilt + ' </article>' +
+          '<article> Домашний порт: ' + feature.values_.info.homePort + ' </article>' +
+          '<article> Номер причала: ' + feature.values_.info.dockNum + ' </article>';
+        overlay.setPosition(coordinates);
+      } else {
+        popCloser.click();
+        console.log('not feature');
+      }
+    });
+
   }
 
   public setVisibleTargets(): void{

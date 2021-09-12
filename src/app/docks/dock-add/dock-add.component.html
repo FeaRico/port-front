@@ -1,0 +1,12 @@
+<div class="container col-md-8 mx-auto w-25 min-200">
+  <h1>Добавление причала</h1>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputSizeLabel">Размер</span>
+    <input class="form-control" id="dock-size" #dockSize
+           aria-label="Размер причала" aria-describedby="inputSizeLabel">
+  </div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-outline-primary" (click)="add(dockSize.value)">Сохранить</button>
+    <button class="btn btn-outline-primary" (click)="backToPage()">Назад</button>
+  </div>
+</div>

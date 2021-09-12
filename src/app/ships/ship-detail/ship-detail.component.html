@@ -1,0 +1,44 @@
+<div *ngIf="ship">
+  <div class="container col-md-8 mx-auto w-25 min-300">
+    <h1>Судно №{{ship.id}}</h1>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputNameLabel">Имя</span>
+      <input class="form-control" id="ship-name" [(ngModel)]="ship.name"
+             aria-label="Имя судна" aria-describedby="inputNameLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputStatusLabel">Статус</span>
+      <input class="form-control" id="ship-status" [(ngModel)]="ship.status"
+             aria-label="Статус судна" aria-describedby="inputStatusLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputTypeLabel">Тип</span>
+      <input class="form-control" id="ship-type" [(ngModel)]="ship.type"
+             aria-label="Тип судна" aria-describedby="inputTypeLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputFlagLabel">Флаг</span>
+      <input class="form-control" id="ship-flag" [(ngModel)]="ship.flag"
+             aria-label="Флаг судна" aria-describedby="inputFlagLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputYearBuiltLabel">Построен</span>
+      <input class="form-control" id="ship-year-built" [(ngModel)]="ship.yearBuilt"
+             aria-label="Год строительства" aria-describedby="inputYearBuiltLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputHomePortLabel">Родной порт</span>
+      <input class="form-control" id="ship-home-port" [(ngModel)]="ship.homePort"
+             aria-label="Домашний порт" aria-describedby="inputHomePortLabel">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputDockNumLabel">Причал №</span>
+      <input class="form-control" id="ship-dock-num" [(ngModel)]="ship.dockNum"
+             aria-label="Номер причала" aria-describedby="inputDockNumLabel">
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-primary" (click)="saveShip()">Сохранить</button>
+      <button class="btn btn-outline-primary" (click)="backToPage()">Назад</button>
+    </div>
+  </div>
+</div>

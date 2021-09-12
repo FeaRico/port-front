@@ -1,0 +1,30 @@
+h1{
+  text-align: center;
+  margin: 10px 0px 20px 0px;
+}
+
+table{
+  width: 100%;
+  margin: auto;
+}
+
+.mat-column-id, .mat-column-name, .mat-column-status,
+.mat-column-type, .mat-column-flag, .mat-column-yearBuilt,
+.mat-column-homePort, .mat-column-dockNum, .mat-column-detail,
+.mat-column-delete{
+  text-align: center;
+}
+
+fa-icon:hover{
+  cursor: pointer;
+}
+
+div.center{
+  width: 70%;
+  min-width: 50%;
+  margin: auto;
+}
+
+button{
+  margin: 1em 0 1em 0;
+}
